@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
           }
           catch(err) {
             io.emit('RECEIVE_MESSAGE', math.eval(0));
+            alert(err)
           }
         
     })

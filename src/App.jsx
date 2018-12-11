@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Button } from "./components/Button";
-import { Input } from "./components/Input";
-import { ClearButton } from "./components/ClearButton";
+import { Button } from "./components/Button/Button";
+import { Input } from "./components/Input/Input";
+import { ClearButton } from "./components/ClearButton/ClearButton";
 // import * as math from "mathjs";
 import io from "socket.io-client";
 
@@ -69,6 +69,7 @@ class App extends Component {
     return (
       <div className="app">
         <div className="calc-wrapper">
+          {/* Mandamo a pantalla el estado del input esto va a depender de las operaciones */}
           <Input input={this.state.input} />
           <div className="row">
             <ClearButton handleClear={() => this.setState({ input: "", contador: 0 })}>
