@@ -15,7 +15,13 @@ io.on('connection', (socket) => {
     console.log(socket.id);
 
     socket.on('SEND_MESSAGE', function(data) {
-        io.emit('RECEIVE_MESSAGE', math.eval(data.value));
+        try {
+            io.emit('RECEIVE_MESSAGE', math.eval(data.value));
+          }
+          catch(err) {
+            io.emit('RECEIVE_MESSAGE', math.eval(0));
+          }
+        
     })
 });
 
